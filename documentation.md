@@ -39,3 +39,6 @@ Due to the simplicity of the web application, there could be multiple ways on ho
 * terraform init
 * terraform plan -var-file=test.tfvars
 * terraform apply -var-file=test.tfvars -auto-approve
+
+### Assumptions:
+* There will always be only one container registry for all deployments in the future
