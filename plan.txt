@@ -6,13 +6,15 @@ Tools:
 - Terraform
 - Kubernetes
 - Docker
+- Github
 
 To do:
 - Create the infrastructure code using Terraform
 - Create an IaC deployment pipeline for the Terraform code
 - Configure the Kubernetes cluster
-- Build the application as an image
-- Deploy the application on to the K8s cluster
+- Creater a build pipelines that:
+    - Builds the application as an image
+    - Deploys the application on to the K8s cluster
 - Document the whole build and release process for application + infra
 
 Possible improvements:
