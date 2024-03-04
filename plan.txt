@@ -14,3 +14,6 @@ To do:
 - Build the application as an image
 - Deploy the application on to the K8s cluster
 - Document the whole build and release process for application + infra
+
+Possible improvements:
+- Separate infrastructure and application code into separate repositories
