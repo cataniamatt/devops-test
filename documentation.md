@@ -10,8 +10,7 @@ Due to the simplicity of the web application, there could be multiple ways on ho
 * Node JS
 
 ### To do:
-* Create the infrastructure code using Terraform
-* Create an IaC deployment pipeline for the Terraform code
+* Create and deploy the infrastructure code using Terraform
 * Configure the Kubernetes cluster
 * Create the application build pipeline:
     * Build the application as an image
@@ -22,7 +21,9 @@ Due to the simplicity of the web application, there could be multiple ways on ho
 * Separate infrastructure and application code into separate repositories
 * Publish docker image into a container registry
 * Save the Terraform state file as a blob inside a storage account
-* Close down public access on resources
+* Create an IaC deployment pipeline for a consistent infrastructure deployment process and to implement with approval stages
+* Create a proper cloud network architecture and close down public access on resources
+* Use self-hosted CI/CD agents instead of provider hosted to improve security and have faster image builds due to Docker cache
 
 ### Application build process:
 * Execute npm install command
