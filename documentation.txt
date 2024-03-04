@@ -21,6 +21,7 @@ To do:
 Possible improvements:
 - Separate infrastructure and application code into separate repositories
 - Publish docker image into a container registry
+- Save the Terraform state file as a blob inside a storage account
 
 Application build process:
 - Execute npm install command
