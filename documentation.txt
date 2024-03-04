@@ -30,4 +30,4 @@ Docker image build process:
 - docker build -t spin-city . (inside app directory)
 
 Docker image local test:
-- docker run -dp 3000:3000 my-app
+- docker run -dp 3000:3000 spin-city
