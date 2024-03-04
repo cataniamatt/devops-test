@@ -20,7 +20,14 @@ To do:
 
 Possible improvements:
 - Separate infrastructure and application code into separate repositories
+- Publish docker image into a container registry
 
 Application build process:
 - Execute npm install command
 - Execute npm start command
+
+Docker image build process:
+- docker build -t spin-city . (inside app directory)
+
+Docker image local test:
+- docker run -dp 3000:3000 my-app
