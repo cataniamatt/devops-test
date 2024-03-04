@@ -1,3 +1,3 @@
 location = "westeurope"
-loc = "westeu"
-env = "test"
+loc      = "westeu"
+env      = "test"
