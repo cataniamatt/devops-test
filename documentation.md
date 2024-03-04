@@ -35,5 +35,5 @@ Due to the simplicity of the web application, there could be multiple ways on ho
 
 ### Infrastructure deployment process:
 * terraform init
-* terraform plan -var-file=dev.tfvars
-* terraform apply -var-file=dev.tfvars -auto-approve
+* terraform plan -var-file=test.tfvars
+* terraform apply -var-file=test.tfvars -auto-approve
