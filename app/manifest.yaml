@@ -41,3 +41,19 @@ spec:
         image: 'acrmcataniatestwesteu.azurecr.io/catania:40263'
         ports:
         - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: test
+  name: webapp
+spec:
+  selector:
+    app: webapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
