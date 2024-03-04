@@ -22,6 +22,7 @@ Due to the simplicity of the web application, there could be multiple ways on ho
 * Separate infrastructure and application code into separate repositories
 * Publish docker image into a container registry
 * Save the Terraform state file as a blob inside a storage account
+* Close down public access on resources
 
 ### Application build process:
 * Execute npm install command
