@@ -15,14 +15,15 @@ recommend creating a free tier account so you don't incur any costs).
 * The load-balancer should use a round-robin strategy.	
 * The application server should return the response "Hi there! I'm being served from {hostname}!".	
 
- ## Context	
+## Context	
 We are testing your ability to implement modern automated infrastructure, as well as general knowledge of system administration. In your solution you should emphasize readability, maintainability and DevOps methodologies.	
 
- ## Submit your solution	
+## Submit your solution	
 Create a public Github repository and push your solution in it. Commit often - we would rather see a history of trial and error than a single monolithic push. When you're finished, send us the URL to the repository.	
 
- ## Running this web application	
- This is a NodeJS application:	This is a NodeJS application:
+## Running this web application	
+This is a NodeJS application:
 
 - `npm test` runs the application tests	- `npm test` runs the application tests
 - `npm start` starts the http server
+
