@@ -1,29 +1,37 @@
-# DevOps Engineer - Technical Test	
-We think infrastructure is best represented as code, and provisioning of resources should be automated as much as possible.	
+# Project Documentation
 
- Your task is to create a CI build pipeline that deploys this web application to a load-balanced	
-environment. You are free to complete the test in a local environment (using tools like Vagrant and	
-Docker) or use any CI service, provisioning tool and cloud environment you feel comfortable with (we	
-recommend creating a free tier account so you don't incur any costs).	
+Due to the simplicity of the web application, there could be multiple ways on how it can be deployed. The most straight forward way would be to deploy it in a serverless fashion as a AWS Beanstalk/Azure App Service web application which is scaled out with multiple instances. However, in this scenario, it is deployed inside a Kubernetes cluster to showcase the use of various modern technologies. Since any cloud provider can be used, the Microsoft Azure cloud service was used as I already have a test environment available.
 
- * Your CI job should:	
-  * Run when a feature branch is pushed to Github (you should fork this repository to your Github account). If you are working locally feel free to use some other method for triggering your build.	
-  * Deploy to a target environment when the job is successful.	
-* The target environment should consist of:	
-  * A load-balancer accessible via HTTP on port 80.	
-  * Two application servers (this repository) accessible via HTTP on port 3000.	
-* The load-balancer should use a round-robin strategy.	
-* The application server should return the response "Hi there! I'm being served from {hostname}!".	
+This Kubernetes deployment creates a namespace called "test-namespace" and deploys a web application using a Deployment and a Service within that namespace. The Deployment ensures two replicas of the web application are running, using a container image that is pulled from an Azure Container Registry. The application runs on port 3000 but the service exposes it internally within the cluster on port 80. An Ingress resource is also configured to route external traffic to the web application through an Azure Application Gateway, specifying the backend service as "webapp" on port 80. The default routing strategy of an Azure Application Gateway is round-robin, therefore, each time the AGW IP is visited on port 80, the host name in the application message changes. Visit the application here: http://108.141.56.213:80.
 
-## Context	
-We are testing your ability to implement modern automated infrastructure, as well as general knowledge of system administration. In your solution you should emphasize readability, maintainability and DevOps methodologies.	
+The application is updated using an Azure DevOps pipeline which is triggered upon the push of any branch prefixed with "feature/" to GitHub. It builds and deploys an application using Docker containers to a Kubernetes cluster. This job encompasses the following steps:
 
-## Submit your solution	
-Create a public Github repository and push your solution in it. Commit often - we would rather see a history of trial and error than a single monolithic push. When you're finished, send us the URL to the repository.	
+1. Check out the repository.
+2. Execute application tests.
+3. Upon successful tests, construct a Docker image.
+4. Upload the Docker image to the container registry, adhering to the naming convention 'Repository:BuildId'.
+5. Update the manifest file with the latest image version.
+6. Apply the updated manifest file to the cluster.
 
-## Running this web application	
-This is a NodeJS application:
 
-- `npm test` runs the application tests	- `npm test` runs the application tests
-- `npm start` starts the http server
+### Infrastructure created:
+* Resource group
+* AKS Cluster with 1 node pool
+* Azure Container Registry
+* IAM Role Assignment
 
+### Tools used:
+* Azure Cloud
+* Azure DevOps
+* Terraform
+* Kubernetes
+* Docker
+* Github
+* Node JS
+
+### Possible improvements:
+* Separate infrastructure and application code into separate repositories
+* Save the Terraform state file as a blob inside a storage account instead of saving it locally
+* Create an IaC deployment pipeline for a safe and consistent infrastructure deployment process
+* Use self-hosted CI/CD agents instead of provider hosted to improve security and have faster image builds due to Docker cache
+* Implement Helm for a more organised and robust deployment strategy across environments
