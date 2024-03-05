@@ -26,6 +26,7 @@ This Kubernetes deployment creates a namespace called "test-namespace" and deplo
 * Create an IaC deployment pipeline for a consistent infrastructure deployment process and to implement with approval stages
 * Create a proper cloud network architecture and close down public access on resources
 * Use self-hosted CI/CD agents instead of provider hosted to improve security and have faster image builds due to Docker cache
+* Implement Helm for a more organised and robust deployment strategy
 
 ### Application build process:
 * Execute npm install command
