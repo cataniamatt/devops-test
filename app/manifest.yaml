@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: 'acrmcataniatestwesteu.azurecr.io/catania:40263'
+        image: '#{ContainerRegistry}#/catania:#{ImageTag}#'
         ports:
         - containerPort: 3000
 
