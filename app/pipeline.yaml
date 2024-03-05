@@ -36,7 +36,6 @@ jobs:
         imageName: '$(Build.Repository.Name):$(Build.BuildId)'
 
     - bash: |
-        ls -la
         find . -type f -name "manifest.yaml" -exec sed -i "s/#{ContainerRegistry}#/acrmcataniatestwesteu.azurecr.io/g; s/#{ImageTag}#/$(Build.BuildId)/g" {} \;
       workingDirectory: app
       displayName: 'Update manifest with image version'
