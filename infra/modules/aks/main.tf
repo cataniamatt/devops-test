@@ -1,18 +1,18 @@
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = var.name
-  resource_group_name = var.resource_group_name
-  node_resource_group = "${var.resource_group_name}-managed"
-  location            = var.location
-  dns_prefix          = var.dns_prefix
-  sku_tier            = var.aks_sku_tier
+  name                      = var.name
+  resource_group_name       = var.resource_group_name
+  node_resource_group       = "${var.resource_group_name}-managed"
+  location                  = var.location
+  dns_prefix                = var.dns_prefix
+  sku_tier                  = var.aks_sku_tier
   automatic_channel_upgrade = "patch"
 
   default_node_pool {
-    name       = "default"
-    node_count = var.default_node_pool_node_count
-    vm_size    = var.default_node_pool_vm_size
-    os_sku     = "AzureLinux"
-    max_pods   = var.default_node_pool_max_pods
+    name                        = "default"
+    node_count                  = var.default_node_pool_node_count
+    vm_size                     = var.default_node_pool_vm_size
+    os_sku                      = "AzureLinux"
+    max_pods                    = var.default_node_pool_max_pods
     temporary_name_for_rotation = "defaultemp"
   }
 

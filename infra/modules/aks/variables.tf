@@ -48,26 +48,26 @@ variable "acr_id" {
 }
 
 variable "network_plugin" {
-  type = string
+  type    = string
   default = "azure"
 }
 
 variable "dns_service_ip" {
-  type = string
+  type    = string
   default = "10.0.0.10"
 }
 
 variable "service_cidr" {
-  type = string
+  type    = string
   default = "10.0.0.0/16"
 }
 
 variable "outbound_type" {
-  type = string
+  type    = string
   default = "managedNATGateway"
 }
 
 variable "ingress_agw_subnet_cidr" {
-  type = string
+  type    = string
   default = "10.225.0.0/16"
 }
