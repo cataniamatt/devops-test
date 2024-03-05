@@ -16,7 +16,5 @@ module "aks" {
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   dns_prefix                   = "mcatania"
-  default_node_pool_vm_size    = "Standard_B2ms"
-  default_node_pool_node_count = "1"
   acr_id                       = azurerm_container_registry.acr.id
 }

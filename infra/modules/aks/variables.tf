@@ -15,17 +15,31 @@ variable "resource_group_name" {
 
 variable "dns_prefix" {
   type        = string
-  description = "The cluster DNS prefix"
+  description = "The DNS prefix to be used for the AKS cluster."
+}
+
+variable "aks_sku_tier" {
+  type        = string
+  description = "The SKU tier that should be used for this Kubernetes Cluster."
+  default     = "Free"
 }
 
 variable "default_node_pool_vm_size" {
   type        = string
-  description = "The Azure VM size of the default node pool"
+  description = "VM size for the default node pool"
+  default     = "Standard_B2ms"
 }
 
 variable "default_node_pool_node_count" {
   type        = number
+  default     = 1
   description = "The set number of nodes created for the default node pool"
+}
+
+variable "default_node_pool_max_pods" {
+  type        = number
+  default     = 10
+  description = "Max pods for the default node pool"
 }
 
 variable "acr_id" {
