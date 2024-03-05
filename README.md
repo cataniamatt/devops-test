@@ -35,3 +35,4 @@ The application is updated using an Azure DevOps pipeline which is triggered upo
 * Create an IaC deployment pipeline for a safe and consistent infrastructure deployment process
 * Use self-hosted CI/CD agents instead of provider hosted to improve security and have faster image builds due to Docker cache
 * Implement Helm for a more organised and robust deployment strategy across environments
+* Add rollback mechanism to pipeline
