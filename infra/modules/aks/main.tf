@@ -11,7 +11,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     name                        = "default"
     node_count                  = var.default_node_pool_node_count
     vm_size                     = var.default_node_pool_vm_size
-    os_sku                      = "AzureLinux"
+    os_sku                      = "Ubuntu"
     max_pods                    = var.default_node_pool_max_pods
     temporary_name_for_rotation = "defaultemp"
   }

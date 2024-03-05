@@ -38,7 +38,7 @@ variable "default_node_pool_node_count" {
 
 variable "default_node_pool_max_pods" {
   type        = number
-  default     = 10
+  default     = 30
   description = "Max pods for the default node pool"
 }
 
