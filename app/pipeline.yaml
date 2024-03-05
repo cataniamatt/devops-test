@@ -5,6 +5,14 @@ jobs:
     displayName: Build and Deploy
     steps:
     - checkout: self
+
+    - task: Npm@1
+      displayName: Application Tests
+      inputs:
+        command: 'custom'
+        workingDir: 'app'
+        customCommand: 'test'
+
     - task: Docker@0
       displayName: 'Build image'
       inputs:
