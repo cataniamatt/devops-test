@@ -29,6 +29,7 @@ jobs:
       displayName: 'Update manifest with image version'
     
     - task: KubernetesManifest@1
+      displayName: 'Deploy latest image'
       inputs:
         action: 'deploy'
         connectionType: 'kubernetesServiceConnection'
