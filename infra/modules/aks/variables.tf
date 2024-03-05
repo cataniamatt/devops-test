@@ -32,3 +32,28 @@ variable "acr_id" {
   type        = string
   description = "The ID of the Azure container registry"
 }
+
+variable "network_plugin" {
+  type = string
+  default = "azure"
+}
+
+variable "dns_service_ip" {
+  type = string
+  default = "10.0.0.10"
+}
+
+variable "service_cidr" {
+  type = string
+  default = "10.0.0.0/16"
+}
+
+variable "outbound_type" {
+  type = string
+  default = "managedNATGateway"
+}
+
+variable "ingress_agw_subnet_cidr" {
+  type = string
+  default = "10.225.0.0/16"
+}

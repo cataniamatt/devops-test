@@ -1,6 +1,7 @@
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.name
   resource_group_name = var.resource_group_name
+  node_resource_group = "${var.resource_group_name}-managed"
   location            = var.location
   dns_prefix          = var.dns_prefix
   default_node_pool {
@@ -10,6 +11,16 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
   identity {
     type = "SystemAssigned"
+  }
+  network_profile {
+    network_plugin = var.network_plugin
+    dns_service_ip = var.dns_service_ip
+    service_cidr   = var.service_cidr
+    outbound_type  = var.outbound_type
+  }
+  ingress_application_gateway {
+    gateway_name = "${var.name}-agw"
+    subnet_cidr  = var.ingress_agw_subnet_cidr
   }
 }
 
