@@ -1,4 +1,5 @@
 # Project Documentation
+![](application.mov)
 
 Due to the simplicity of the web application, there could be multiple ways on how it can be deployed. The most straight forward way would be to deploy it in a serverless fashion as a AWS Beanstalk/Azure App Service web application which is scaled out with multiple instances. However, in this scenario, it is deployed inside a Kubernetes cluster to showcase the use of various modern technologies. Since any cloud provider can be used, the Microsoft Azure cloud service was used as I already have a test environment available.
 
