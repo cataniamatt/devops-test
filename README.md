@@ -37,3 +37,6 @@ The application is updated using an Azure DevOps pipeline which is triggered upo
 * Use self-hosted CI/CD agents instead of provider hosted to improve security and have faster image builds due to Docker cache
 * Implement Helm for a more organised and robust deployment strategy across environments
 * Add rollback mechanism to pipeline
+* Implement pod and node autoscaling for the backend AKS cluster, this would help scale the system according the the demand.
+* Create a proper network structure, with a robust edge security configuration. Cloudflare can also be augmented to provide CDN funcitonality.
+* The IaC code implemented has been modularised a bit, however, further modularisation is required to eventually have the resources declared as a JSON object. This would reduce code repetition and improve code organisaiton.
