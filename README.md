@@ -28,7 +28,6 @@ The application is updated using an Azure DevOps pipeline which is triggered upo
 * Kubernetes
 * Docker
 * Github
-* Node JS
 
 ### Possible improvements:
 * Separate infrastructure and application code into separate repositories
